@@ -9,28 +9,3 @@
 html {
     scroll-behavior: smooth;
 }
-
-.active {
-    color: #ffffff;
-    border-top: 1px solid #616161;
-    border-bottom: 1px solid #616161;
-}
-
-.active:hover {
-    color: #ffffff;
-    border-top: 1px solid #616161;
-    border-bottom: 1px solid #616161;
-}
-
-a {
-    color: #616161;
-    border-top: 1px solid #ffffff;
-    border-bottom: 1px solid #ffffff;
-}
-
-a:hover {
-    color: #ffffff;
-    border-top: 1px solid #616161;
-    border-bottom: 1px solid #616161;
-    transition: all 200ms ease-in-out;
-}

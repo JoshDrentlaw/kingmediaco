@@ -8,19 +8,19 @@ import { Container } from "../components/layout"
 
 const H1 = styled.h1`
   color: #616161;
-  font-size: 2em;
+  font-size: calc(22px + (27 - 22) * ((100vw - 300px) / (1600 - 300)));
   margin: 1em 0;
 `
 
 const H2 = styled.h2`
   color: #616161;
-  font-size: 2em;
+  font-size: calc(22px + (27 - 22) * ((100vw - 300px) / (1600 - 300)));
   margin: 1em 0 1em;
 `
 
 const P = styled.p`
   color: #d4d4d4;
-  font-size: 0.9em;
+  font-size: 14px;
   line-height: 30px;
   text-align: center;
 `

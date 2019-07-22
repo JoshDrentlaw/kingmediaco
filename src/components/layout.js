@@ -15,10 +15,12 @@ const Background = styled.div`
   background-color: black;
   color: white;
   height: 100%;
+  overflow: hidden;
 `
 
 const Main = styled.main`
-  min-height: auto;
+  min-height: calc(100vh - 187px);
+  height: auto;
   margin: 0 auto;
   padding: 1rem;
 
@@ -77,7 +79,7 @@ const Layout = ({ children }) => {
     <Background className="font-serif">
       <div className="relative">
         <Header />
-        <Main className="lg:w-1/2 w-full relative overflow-scroll scrolling-touch lg:overflow-visible">{children}</Main>
+        <Main className="lg:w-1/2 w-full relative overflowY-scroll scrolling-touch overflowX-hidden lg:overflow-visible">{children}</Main>
         <Footer />
       </div>
     </Background>
