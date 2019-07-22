@@ -4,15 +4,10 @@ import { Link } from "gatsby"
 import styled from 'styled-components'
 
 import Hamburger from '../assets/svg/hamburger.inline.svg'
-import Instagram from '../assets/svg/instagram.inline.svg'
-import Facebook from '../assets/svg/facebook.inline.svg'
 
 const Wrapper = styled.div`
-  @media (min-width: 1024px) {
-    display: grid;
-    grid-template-columns: 40% 60%;
-    grid-template-areas: 'brand links';
-  }
+  border-bottom: 1px solid #616161;
+  height: 95px;
 `
 
 const Links = styled.div.attrs(({ open }) => ({
@@ -24,7 +19,6 @@ const Links = styled.div.attrs(({ open }) => ({
 
   /* Medium devices (tablets, less than 992px) */
   @media (max-width: 1024px) {
-    font-size: 1.5rem;
     width: 40vw; height: 100vh;
     padding: 1rem;
     padding-top: 4rem;
@@ -52,22 +46,10 @@ const HamburgerButton = (props) => {
   )
 }
 
-export const Socials = () => (
-  <div className="pl-px2 w-1/2">
-    <a href="#" className="text-white mr-4 inline">
-      <Instagram className="fill-current w-4 h-4 inline" />
-    </a>
-    <a href="#" className="text-white inline">
-      <Facebook className="fill-current w-4 h-4 inline" />
-    </a>
-  </div>
-)
-
-const wrapper = 'bg-transparent mx-auto p-4 flex justify-between items-center lg:w-1/2';
+const wrapper = 'bg-transparent mx-auto flex justify-between items-center lg:w-1/2';
 
 const links =
-  `text-white lg:text-black flex flex-col justify-start items-start bg-transblack z-10
-  lg:bg-transparent lg:flex-row lg:justify-between lg:items-center lg:visible`;
+  `flex flex-col justify-center items-center text-lg z-10 lg:flex-row lg:visible`;
 
 const Header = (props) => {
   const [open, setOpen] = useState(false);
@@ -75,13 +57,14 @@ const Header = (props) => {
   return(
     <nav className="fixed lg:relative w-full z-50">
       <Wrapper className={wrapper}>
-        <span className="text-red-600 font-sans md:text-base text-lg whitespace-no-wrap hidden lg:inline" style={{ gridArea: 'brand' }}>Company Logo</span>
+        <span className="text-white md:text-4xl text-4xl whitespace-no-wrap hidden lg:inline" style={{ gridArea: 'brand' }}>King Media Co</span>
         <Links open={open} className={links}>
           <div className="">
-            <Link className="block lg:inline lg:pr-2 lg:border-none border-b-2 border-white" activeClassName="active" to='/'>Home</Link>
-            <Link className="block lg:inline lg:pl-2" activeClassName="active" to='/contact/'>Contact</Link>
+            <Link className="block lg:inline lg:py-1 text-center" activeClassName="active" to='/'>Home</Link>
+            <Link className="block lg:inline lg:py-1 lg:ml-4 text-center" activeClassName="active" to='/projects/'>Projects</Link>
+            <Link className="block lg:inline lg:py-1 lg:ml-4 text-center" activeClassName="active" to='/blog/'>Blog</Link>
+            <Link className="block lg:inline lg:py-1 lg:ml-4 text-center" activeClassName="active" to='/contact/'>Contact</Link>
           </div>
-          <Socials />
         </Links>
         <HamburgerButton toggle={setOpen} state={open} />
       </Wrapper>

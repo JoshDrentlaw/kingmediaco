@@ -1,25 +1,28 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-import is from 'is_js'
-
 import '../global.css'
 import styled from 'styled-components'
 
-import Header, { Socials } from "./header"
+import Header from "./header"
+import Instagram from '../assets/svg/instagram.inline.svg'
+import Facebook from '../assets/svg/facebook.inline.svg'
+import Vimeo from '../assets/svg/vimeo.inline.svg'
+import Youtube from '../assets/svg/youtube.inline.svg'
 
 
 const Background = styled.div`
-
+  background-color: black;
+  color: white;
 `
 
 const Main = styled.main`
-  min-height: calc(100vh - 112px);
+  min-height: calc(100vh - 157px);
   margin: 0 auto;
   padding: 1rem;
 
   @media (max-width: 1024px) {
-    max-height: calc(100vh - 112px);
+    max-height: calc(100vh - 157px);
   }
 `
 
@@ -31,30 +34,46 @@ export const Container = styled.section`
     justify-content: center;
     margin: ${props => props.margin || '0'};
     padding: ${props => props.padding || '0'};
-    width: 100%;
+    width: ${props => props.widthSm || '100%'};
 
     @media(min-width: 1024px) {
-        flex-direction: ${props => props.flexDirLg || 'row'};
+        flex-direction: ${props => props.flexDirLg || 'column'};
         height: ${props => props.heightLg || '40vh'};
         justify-content: ${props => props.justifyLg || 'center'};
+        width: ${props => props.widthLg || '100%'};
     }
 `
 
+export const Socials = () => (
+  <div>
+    <a href="#" className="text-white inline border-none">
+      <Vimeo className="fill-current w-6 h-6 inline" />
+    </a>
+    <a href="#" className="text-white inline border-none ml-4">
+      <Facebook className="fill-current w-6 h-6 inline" />
+    </a>
+    <a href="#" className="text-red-700 inline border-none ml-4">
+      <Youtube className="fill-current w-6 h-6 inline" />
+    </a>
+    <a href="#" className="text-white inline border-none ml-4">
+      <Instagram className="fill-current w-6 h-6 inline" />
+    </a>
+  </div>
+)
+
 const Footer = () => (
-  <footer className="w-full text-center p-4 bg-black text-lightgrey z-50 fixed bottom-0 lg:relative lg:bottom-auto">
+  <footer className="w-full text-center text-xl p-4 text-lightgrey z-50 fixed bottom-0 lg:relative lg:bottom-auto">
     <div className="lg:w-1/2 mx-auto flex justify-between">
-      <div className="text-sm w-1/2">© {new Date().getFullYear()} </div>
+      <div>© King Media Co {new Date().getFullYear()} </div>
       <Socials />
     </div>
   </footer>
 )
 
 const Layout = ({ children }) => {
-  const isClient = typeof window !== 'undefined';
-  const safari = is.safari();
 
   return(
-    <Background safari={safari}>
+    <Background className="font-serif">
       <div className="relative">
         <div id="top"></div>
         <Header />

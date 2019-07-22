@@ -2,23 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-@font-face {
+/* @font-face {
     
-}
+} */
 
 html {
     scroll-behavior: smooth;
 }
 
-#___gatsby {
-    
+.active {
+    color: #ffffff;
+    border-top: 1px solid #616161;
+    border-bottom: 1px solid #616161;
 }
 
-.active, .active:hover {
-    color: #e53e3e;
+.active:hover {
+    color: #ffffff;
+    border-top: 1px solid #616161;
+    border-bottom: 1px solid #616161;
+}
+
+a {
+    color: #616161;
+    border-top: 1px solid #ffffff;
+    border-bottom: 1px solid #ffffff;
 }
 
 a:hover {
-    color: #cacaca;
-    transition: color 200ms ease-in-out;
+    color: #ffffff;
+    border-top: 1px solid #616161;
+    border-bottom: 1px solid #616161;
+    transition: all 200ms ease-in-out;
 }
