@@ -1,3 +1,3 @@
-# Gatsby Boilerplate
+# King Media Co.
 
-My personal Gatsby Boilerplate. Uses Styled-Components, TailwindCSS, and Web Font Loader out of the box.
+Website for King Media Co. Find them at www.kingmediaco.com

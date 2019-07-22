@@ -1,7 +1,7 @@
 {
-  "name": "gatsby-boilerplate",
+  "name": "kingmediaco",
   "private": true,
-  "description": "My personal Gatsby boilerplate.",
+  "description": "Website for King Media Co. Find them at kingmediaco.com",
   "version": "0.1.0",
   "author": "Josh Drentlaw <joshdrentlaw@gmail.com>",
   "dependencies": {
@@ -42,16 +42,16 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
+    "dev": "npm run develop",
     "serve": "gatsby serve",
     "prod": "npm run build && npm run serve",
     "netlify": "netlify dev --live"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/JoshDrentlaw/"
+    "url": "https://github.com/JoshDrentlaw/kingmediaco"
   },
   "bugs": {
-    "url": "https://github.com/JoshDrentlaw/"
+    "url": "https://github.com/JoshDrentlaw/kingmediaco/issues/"
   }
 }
