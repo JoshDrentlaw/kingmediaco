@@ -4,8 +4,8 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Boilerplate`,
-    description: `My personal Gatsby boilerplate.`,
+    title: `King Media Co.`,
+    description: `King Media Co. is a media production service specializing in video production and video marketing. We are the cinematic solution when it comes to telling the stories of businesses and entrepreneurs.`,
     author: `Josh Drentlaw`,
   },
   plugins: [
@@ -22,7 +22,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `penny-house-weddings`,
+        name: `kingmediaco`,
         short_name: `starter`,
         start_url: `/`,
         background_color: `#000000`,
