@@ -76,7 +76,7 @@ const Footer = () => (
 const Layout = ({ children }) => {
 
   return(
-    <Background className="font-serif">
+    <Background className="font-serif p-2 lg:p-0">
       <div className="relative">
         <Header />
         <Main className="lg:w-1/2 w-full relative overflowY-scroll scrolling-touch overflowX-hidden lg:overflow-visible">{children}</Main>
