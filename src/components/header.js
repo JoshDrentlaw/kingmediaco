@@ -14,8 +14,6 @@ const Links = styled.div.attrs(({ open }) => ({
   visibility: open ? 'visible' : 'hidden',
   transform: open ? `translateX(0%)` : `translateX(100%)`,
 }))`
-  grid-area: links;
-  position: relative;
 
   /* Medium devices (tablets, less than 992px) */
   @media (max-width: 1024px) {
@@ -30,7 +28,7 @@ const Links = styled.div.attrs(({ open }) => ({
   }
 `
 
-const hamburger = "flex items-center px-3 py-2 text-black bg-white rounded border border-black";
+const hamburger = "flex items-center px-3 py-2 text-white";
 
 const HamburgerButton = (props) => {
   const toggle = () => {
@@ -40,24 +38,24 @@ const HamburgerButton = (props) => {
   return (
     <div className="block ml-auto z-50 lg:hidden" style={{ gridArea: 'links' }}>
       <button className={hamburger} onClick={toggle}>
-        <Hamburger className="fill-current h-3 w-3" />
+        <Hamburger className="fill-current h-6 w-6" />
       </button>
     </div>
   )
 }
 
-const wrapper = 'bg-transparent mx-auto flex justify-between items-center lg:w-1/2';
+const wrapper = 'bg-transparent mx-auto flex justify-between items-center p-4 lg:p-0 lg:w-1/2';
 
 const links =
-  `flex flex-col justify-center items-center text-lg z-10 lg:flex-row lg:visible`;
+  `bg-black lg:bg-transparent flex flex-col justify-center items-center text-lg z-10 lg:flex-row lg:visible`;
 
 const Header = (props) => {
   const [open, setOpen] = useState(false);
 
   return(
-    <nav className="fixed lg:relative w-full z-50">
+    <nav className="relative w-full z-50">
       <Wrapper className={wrapper}>
-        <span className="text-white md:text-4xl text-4xl whitespace-no-wrap hidden lg:inline" style={{ gridArea: 'brand' }}>King Media Co</span>
+        <span className="text-white md:text-4xl text-xl whitespace-no-wrap inline" style={{ gridArea: 'brand' }}>King Media Co</span>
         <Links open={open} className={links}>
           <div className="">
             <Link className="block lg:inline lg:py-1 text-center" activeClassName="active" to='/'>Home</Link>

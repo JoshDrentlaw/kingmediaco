@@ -14,15 +14,16 @@ import Youtube from '../assets/svg/youtube.inline.svg'
 const Background = styled.div`
   background-color: black;
   color: white;
+  height: 100%;
 `
 
 const Main = styled.main`
-  min-height: calc(100vh - 157px);
+  min-height: auto;
   margin: 0 auto;
   padding: 1rem;
 
-  @media (max-width: 1024px) {
-    max-height: calc(100vh - 157px);
+  @media (min-width: 1024px) {
+    min-height: calc((100vh - 157px));
   }
 `
 
@@ -62,8 +63,8 @@ export const Socials = () => (
 )
 
 const Footer = () => (
-  <footer className="w-full text-center text-xl p-4 text-lightgrey z-50 fixed bottom-0 lg:relative lg:bottom-auto">
-    <div className="lg:w-1/2 mx-auto flex justify-between">
+  <footer className="w-full text-center text-xl p-4 text-lightgrey z-50 relative bottom-auto">
+    <div className="lg:w-1/2 mx-auto flex flex-col lg:flex-row justify-between">
       <div>© King Media Co {new Date().getFullYear()} </div>
       <Socials />
     </div>
@@ -75,7 +76,6 @@ const Layout = ({ children }) => {
   return(
     <Background className="font-serif">
       <div className="relative">
-        <div id="top"></div>
         <Header />
         <Main className="lg:w-1/2 w-full relative overflow-scroll scrolling-touch lg:overflow-visible">{children}</Main>
         <Footer />

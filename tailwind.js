@@ -6,8 +6,8 @@ module.exports = {
     colors: {
       transparent: 'transparent',
 
-      black: '#101010',
-      transblack: 'rgba(16,16,16,0.6)',
+      black: '#000000',
+      transblack: 'rgba(0, 0, 0, 0.7)',
       lightgrey: '#cacaca',
       white: '#fff',
 
