@@ -49,16 +49,16 @@ export const Container = styled.section`
 
 export const Socials = () => (
   <div>
-    <a href="#" className="text-white inline border-none">
+    <a href="https://vimeo.com/kingmediaco" target="_blank" rel="noopener noreferrer" className="text-white inline border-none">
       <Vimeo className="fill-current w-6 h-6 inline" />
     </a>
-    <a href="#" className="text-white inline border-none ml-4">
+    <a href="https://www.facebook.com/King-Media-Co-2161807463868764/" target="_blank" rel="noopener noreferrer" className="text-white inline border-none ml-4">
       <Facebook className="fill-current w-6 h-6 inline" />
     </a>
-    <a href="#" className="text-red-700 inline border-none ml-4">
+    <a href="https://www.youtube.com/channel/UCLxvxR8zhTVagA0ysMkdlzA" target="_blank" rel="noopener noreferrer" className="text-red-700 inline border-none ml-4">
       <Youtube className="fill-current w-6 h-6 inline" />
     </a>
-    <a href="#" className="text-white inline border-none ml-4">
+    <a href="https://www.instagram.com/kingmediaco/" target="_blank" rel="noopener noreferrer" className="text-white inline border-none ml-4">
       <Instagram className="fill-current w-6 h-6 inline" />
     </a>
   </div>
