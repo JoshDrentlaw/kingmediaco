@@ -51,6 +51,14 @@ module.exports = {
         }
       }
     },
+    {
+      resolve: 'gatsby-source-sanity',
+      options: {
+        projectId: 'vepncfr1',
+        dataset: 'projects',
+        token: process.env.SANITY_TOKEN,
+      }
+    },
     'gatsby-plugin-netlify',
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
