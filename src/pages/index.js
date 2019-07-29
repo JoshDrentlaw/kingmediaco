@@ -27,7 +27,7 @@ const P = styled.p`
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home | King Media Co." />
+    <SEO title="Home" />
     <Container margin="0 auto" heightLg="auto" heightSm="auto" widthLg="60%">
       <H1>we are: king media</H1>
       <P>King Media Co. is a media production service specializing in video production and video marketing. We are the cinematic solution when it comes to telling the stories of businesses and entrepreneurs.</P>

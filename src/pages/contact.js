@@ -8,7 +8,7 @@ import { Container } from "../components/layout"
 
 const ContactPage = () => (
     <Layout>
-        <SEO title="Contact | King Media Co." />
+        <SEO title="Contact" />
         <Container>
             
         </Container>

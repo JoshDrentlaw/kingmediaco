@@ -8,7 +8,7 @@ import { Container } from "../components/layout"
 
 const BlogPage = () => (
     <Layout>
-        <SEO title="Blog | King Media Co." />
+        <SEO title="Blog" />
         <Container>
             
         </Container>
