@@ -7,7 +7,11 @@ import Hamburger from '../assets/svg/hamburger.inline.svg'
 
 const Wrapper = styled.div`
   border-bottom: 1px solid #616161;
-  height: 95px;
+  height: 75px;
+
+  @media(min-width: 1024px) {
+    margin-top: 20px;
+  }
 `
 
 const Links = styled.div.attrs(({ open }) => ({
@@ -15,7 +19,6 @@ const Links = styled.div.attrs(({ open }) => ({
   transform: open ? `translateX(0%)` : `translateX(100%)`,
 }))`
 
-  /* Medium devices (tablets, less than 992px) */
   @media (max-width: 1024px) {
     width: 45vw; height: 100vh;
     padding: 0.5em;
@@ -29,10 +32,11 @@ const Links = styled.div.attrs(({ open }) => ({
 `
 
 const A = styled(Link)`
-  color: #616161;
+  color: #9E9E9E;
   border-top: 1px solid #ffffff;
-  padding: 10px 0;
+  padding: 2px 0;
   text-align: right;
+  width: 94px;
 
   &[href="/"] {
     border-top: none;
@@ -43,7 +47,7 @@ const A = styled(Link)`
   }
 
   @media (min-width: 1024px) {
-    color: #616161;
+    color: #9E9E9E;
     border-top: 1px solid #ffffff;
     border-bottom: 1px solid #ffffff;
     text-align: center;
@@ -88,7 +92,7 @@ const HamburgerButton = (props) => {
 const wrapper = 'bg-transparent mx-auto flex justify-between items-center p-4 overflow-hidden lg:p-0 lg:w-1/2';
 
 const links =
-  `bg-black lg:bg-transparent flex flex-col justify-start items-end text-lg z-10 mt-4 lg:mt-0 lg:flex-row lg:visible`;
+  `bg-black lg:bg-transparent flex flex-col justify-start items-end text-md z-10 mt-4 lg:mt-0 lg:flex-row lg:visible`;
 
 const Header = (props) => {
   const [open, setOpen] = useState(false);
@@ -96,14 +100,13 @@ const Header = (props) => {
   return(
     <nav className="relative w-full z-50">
       <Wrapper className={wrapper}>
-        <span className="text-white md:text-4xl text-xl whitespace-no-wrap inline" style={{ gridArea: 'brand' }}>King Media Co</span>
+        <span className="text-white md:text-4xl whitespace-no-wrap inline" style={{ gridArea: 'brand', fontSize: '31px' }}>King Media Co</span>
         <Links open={open} className={links}>
-          <div className="">
-            <A className="block lg:inline lg:py-1" activeClassName="active" to='/'>Home</A>
-            <A className="block lg:inline lg:py-1 lg:ml-4" activeClassName="active" to='/projects/'>Projects</A>
-            <A className="block lg:inline lg:py-1 lg:ml-4" activeClassName="active" to='/blog/'>Blog</A>
-            <A className="block lg:inline lg:py-1 lg:ml-4" activeClassName="active" to='/contact/'>Contact</A>
-          </div>
+          <A className="block lg:inline lg:py-1" activeClassName="active" to='/'>Home</A>
+          <A className="block lg:inline lg:py-1 lg:ml-6" activeClassName="active" to='/projects/'>Projects</A>
+          <A className="block lg:inline lg:py-1 lg:ml-6" activeClassName="active" to='/blog/'>Blog</A>
+          <A className="block lg:inline lg:py-1 lg:ml-6" activeClassName="active" to='/discovery/'>Discovery</A>
+          <A className="block lg:inline lg:py-1 lg:ml-6" activeClassName="active" to='/contact/'>Contact</A>
         </Links>
         <HamburgerButton toggle={setOpen} state={open} />
       </Wrapper>

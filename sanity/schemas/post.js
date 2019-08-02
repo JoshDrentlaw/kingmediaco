@@ -4,32 +4,31 @@ export default {
   type: 'document',
   fields: [
     {
-      name: 'title',
-      title: 'Title',
+      title: 'Project Title',
+      name: 'project_title',
+      description: 'The title the will appear on the project page.',
       type: 'string'
     },
     {
       name: 'slug',
       title: 'Slug',
       type: 'slug',
+      description: 'This will be the URL for the blog post.',
       options: {
-        source: 'title',
+        source: 'blog_title',
         maxLength: 96
       }
     },
     {
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: {type: 'author'}
+      name: 'main_project_image',
+      title: 'Main project image',
+      type: 'mainImage',
+      description: 'Appears on the project page.'
     },
     {
-      name: 'mainImage',
-      title: 'Main image',
-      type: 'image',
-      options: {
-        hotspot: true
-      }
+      name: 'main_video',
+      title: 'Main video',
+      type: 'url'
     },
     {
       name: 'categories',
@@ -38,9 +37,28 @@ export default {
       of: [{type: 'reference', to: {type: 'category'}}]
     },
     {
+      name: 'author',
+      title: 'Author',
+      type: 'reference',
+      to: {type: 'author'}
+    },
+    {
+      title: 'Blog Title',
+      name: 'blog_title',
+      description: 'The title the will appear on the blog post.',
+      type: 'string'
+    },
+    {
       name: 'publishedAt',
       title: 'Published at',
-      type: 'datetime'
+      type: 'datetime',
+      description: 'This won\'t be displayed, but will be useful for sorting posts.'
+    },
+    {
+      name: 'main_blog_image',
+      title: 'Main blog image',
+      type: 'mainImage',
+      description: 'Appears at the top of the post.'
     },
     {
       name: 'body',
@@ -51,9 +69,9 @@ export default {
 
   preview: {
     select: {
-      title: 'title',
+      title: 'blog_title',
       author: 'author.name',
-      media: 'mainImage'
+      media: 'main_blog_image'
     },
     prepare(selection) {
       const {author} = selection
