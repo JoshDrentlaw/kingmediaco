@@ -1,11 +1,11 @@
 {
   "root": true,
-  "project": {
-    "name": "kingmediaco"
-  },
   "api": {
     "projectId": "vepncfr1",
     "dataset": "projects"
+  },
+  "project": {
+    "name": "kingmediaco"
   },
   "plugins": [
     "@sanity/base",
