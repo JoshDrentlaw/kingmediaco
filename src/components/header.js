@@ -38,10 +38,6 @@ const A = styled(Link)`
   text-align: right;
   width: 94px;
 
-  &[href="/"] {
-    border-top: none;
-  }
-
   &.active {
     color: #ffffff;
   }
