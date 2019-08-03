@@ -10,6 +10,7 @@ import { Container } from "../components/layout"
 
 const ProjectItem = styled.section`
     max-width: 600px;
+    text-align: center;
 `
 
 const H2 = styled.h2`
