@@ -41,7 +41,7 @@ export const Container = styled.section`
 
     @media(min-width: 1024px) {
         flex-direction: ${props => props.flexDirLg || 'column'};
-        height: ${props => props.heightLg || '40vh'};
+        height: ${props => props.heightLg || 'auto'};
         justify-content: ${props => props.justifyLg || 'center'};
         width: ${props => props.widthLg || '100%'};
     }
