@@ -1,11 +1,11 @@
 export default {
   name: 'post',
-  title: 'Post',
+  title: 'Project',
   type: 'document',
   fields: [
     {
       title: 'Project Title',
-      name: 'project_title',
+      name: 'projectTitle',
       description: 'The title the will appear on the project page.',
       type: 'string'
     },
@@ -20,13 +20,13 @@ export default {
       }
     },
     {
-      name: 'main_project_image',
+      name: 'mainProjectImage',
       title: 'Main project image',
-      type: 'mainImage',
+      type: 'image',
       description: 'Appears on the project page.'
     },
     {
-      name: 'main_video',
+      name: 'mainVideo',
       title: 'Main video',
       type: 'url'
     },
@@ -44,7 +44,7 @@ export default {
     },
     {
       title: 'Blog Title',
-      name: 'blog_title',
+      name: 'blogTitle',
       description: 'The title the will appear on the blog post.',
       type: 'string'
     },
@@ -55,9 +55,9 @@ export default {
       description: 'This won\'t be displayed, but will be useful for sorting posts.'
     },
     {
-      name: 'main_blog_image',
+      name: 'mainBlogImage',
       title: 'Main blog image',
-      type: 'mainImage',
+      type: 'image',
       description: 'Appears at the top of the post.'
     },
     {
@@ -69,9 +69,9 @@ export default {
 
   preview: {
     select: {
-      title: 'blog_title',
+      title: 'projectTitle',
       author: 'author.name',
-      media: 'main_blog_image'
+      media: 'mainProjectImage'
     },
     prepare(selection) {
       const {author} = selection

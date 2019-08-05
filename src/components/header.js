@@ -99,7 +99,7 @@ const Header = (props) => {
         <span className="text-white md:text-4xl whitespace-no-wrap inline" style={{ gridArea: 'brand', fontSize: '31px' }}>King Media Co</span>
         <Links open={open} className={links}>
           <A className="block lg:inline lg:py-1" activeClassName="active" to='/'>Home</A>
-          <A className="block lg:inline lg:py-1 lg:ml-6" activeClassName="active" to='/projects/'>Projects</A>
+          <A className="block lg:inline lg:py-1 lg:ml-6" activeClassName="active" to='/services/'>Services</A>
           <A className="block lg:inline lg:py-1 lg:ml-6" activeClassName="active" to='/blog/'>Blog</A>
           <A className="block lg:inline lg:py-1 lg:ml-6" activeClassName="active" to='/discovery/'>Discovery</A>
           <A className="block lg:inline lg:py-1 lg:ml-6" activeClassName="active" to='/contact/'>Contact</A>

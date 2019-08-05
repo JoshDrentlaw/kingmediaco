@@ -57,6 +57,8 @@ module.exports = {
         projectId: 'vepncfr1',
         dataset: 'projects',
         token: process.env.SANITY_TOKEN,
+        overlayDrafts: true,
+        watchMode: true
       }
     },
     'gatsby-plugin-netlify',
