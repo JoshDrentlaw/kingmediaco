@@ -8,12 +8,8 @@ import SEO from "../components/seo"
 
 import { Container } from "../components/layout"
 
-const ProjectItem = styled(Container)`
-    width: 600px;
-
-    div {
-        width: 600px;
-    }
+const ProjectItem = styled.div`
+    width: 100%; height: 100%;
 `
 
 const H2 = styled.h2`
@@ -30,9 +26,10 @@ const BlogPage = () => {
                         projectTitle
                         mainProjectImage {
                             asset {
-                                fluid {
+                                fluid(maxHeight: 600, maxWidth: 600) {
                                     ...GatsbySanityImageFluid
                                 }
+                                url
                             }
                         }
                     }
