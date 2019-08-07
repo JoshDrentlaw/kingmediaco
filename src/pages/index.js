@@ -29,10 +29,9 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <Container margin="0 auto" heightLg="auto" heightSm="auto" widthLg="60%">
-      <H1>we are: king media</H1>
-      <P>King Media Co. is a media production service specializing in video production and video marketing. We are the cinematic solution when it comes to telling the stories of businesses and entrepreneurs.</P>
-      <H2>cinematic solutions</H2>
-      <P>Welcome to the visual world.<br />The era of online content, and video is king.<br />Ready to set your story into motion?</P>
+      <H1>we are king media</H1>
+      <P>King Media Co. is a media production service specializing in video production and video marketing. We are the cinematic solution when it comes to photo and video services.</P>
+      <button><a href="/discovery/">Explore Our Services</a></button>
     </Container>
   </Layout>
 )

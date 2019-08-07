@@ -26,10 +26,9 @@ const BlogPage = () => {
                         projectTitle
                         mainProjectImage {
                             asset {
-                                fluid(maxHeight: 600, maxWidth: 600) {
+                                fluid(maxWidth: 600) {
                                     ...GatsbySanityImageFluid
                                 }
-                                url
                             }
                         }
                     }
@@ -43,7 +42,7 @@ const BlogPage = () => {
             <SEO title="Blog" />
             {data.allSanityPost.edges.map(({ node }) => (
                     <ProjectItem key={node.id} padding="1em">
-                        <Img fluid={node.mainProjectImage.asset.fluid} alt={node.mainProjectImage.caption} />
+                        <Img fluid={node.mainProjectImage.asset.fluid} alt={node.id} />
                         <H2>{node.projectTitle}</H2>
                     </ProjectItem>
                 )
