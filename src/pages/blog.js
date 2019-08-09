@@ -19,7 +19,7 @@ const H2 = styled.h2`
 const BlogPage = () => {
     const data = useStaticQuery(graphql`
         {
-            allSanityPost(sort: {fields: publishedAt, order: DESC}) {
+            allSanityProject(sort: {fields: publishedAt, order: DESC}) {
                 edges {
                     node {
                         id
