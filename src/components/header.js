@@ -32,39 +32,32 @@ const Links = styled.div.attrs(({ open }) => ({
 `
 
 const A = styled(Link)`
-  color: #9E9E9E;
-  border-top: 1px solid #ffffff;
+  color: black;
+  border-top: 1px solid black;
   padding: 2px 0;
   text-align: right;
   width: 94px;
 
   &.active {
-    color: #ffffff;
+    background-color: black;
+    color: white;
   }
 
   @media (min-width: 1024px) {
-    color: #9E9E9E;
-    border-top: 1px solid #ffffff;
-    border-bottom: 1px solid #ffffff;
+    color: black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
     text-align: center;
 
     &:hover {
-        color: #ffffff;
-        border-top: 1px solid #616161;
-        border-bottom: 1px solid #616161;
+        background-color: rgba(153, 153, 153, 0.58);
+        color: black;
         transition: all 200ms ease-in-out;
     }
 
-    &.active {
-        color: #ffffff;
-        border-top: 1px solid #616161;
-        border-bottom: 1px solid #616161;
-    }
-
     &.active:hover {
-        color: #ffffff;
-        border-top: 1px solid #616161;
-        border-bottom: 1px solid #616161;
+        background-color: black;
+        color: white;
     }
   }
 `
@@ -85,7 +78,7 @@ const HamburgerButton = (props) => {
   )
 }
 
-const wrapper = 'bg-transparent mx-auto flex justify-between items-center p-4 overflow-hidden lg:p-0 lg:w-1/2';
+const wrapper = 'bg-transparent mx-auto flex justify-between items-center p-4 overflow-hidden lg:p-0 lg:w-4/5';
 
 const links =
   `bg-black lg:bg-transparent flex flex-col justify-start items-end text-md z-10 mt-4 lg:mt-0 lg:flex-row lg:visible`;
@@ -96,7 +89,7 @@ const Header = (props) => {
   return(
     <nav className="relative w-full z-50">
       <Wrapper className={wrapper}>
-        <span className="text-white md:text-4xl whitespace-no-wrap inline" style={{ gridArea: 'brand', fontSize: '31px' }}>King Media Co</span>
+        <span className="md:text-4xl whitespace-no-wrap inline" style={{ gridArea: 'brand', fontSize: '31px' }}>King Media Co</span>
         <Links open={open} className={links}>
           <A className="block lg:inline lg:py-1" activeClassName="active" to='/'>Home</A>
           <A className="block lg:inline lg:py-1 lg:ml-6" activeClassName="active" to='/services/'>Services</A>

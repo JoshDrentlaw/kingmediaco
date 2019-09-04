@@ -12,8 +12,8 @@ import Youtube from '../assets/svg/youtube.inline.svg'
 
 
 const Background = styled.div`
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   height: 100%;
   overflow: hidden;
 `
@@ -79,7 +79,7 @@ const Layout = ({ children }) => {
     <Background className="font-serif p-2 lg:p-0">
       <div className="relative">
         <Header />
-        <Main className="lg:w-1/2 w-full relative overflowY-scroll scrolling-touch overflowX-hidden lg:overflow-visible">{children}</Main>
+        <Main className="w-full relative overflowY-scroll scrolling-touch overflowX-hidden lg:overflow-visible">{children}</Main>
         <Footer />
       </div>
     </Background>
