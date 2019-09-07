@@ -81,18 +81,29 @@ const A = styled(Link)`
   }
 `
 
-const hamburger = "flex items-center px-3 py-2 text-white";
+const HamburgerButton = styled.button`
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 0.5em 0.75em;
 
-const HamburgerButton = (props) => {
+  svg {
+    color: black;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+`
+
+const HamburgerMenuButton = (props) => {
   const toggle = () => {
     props.toggle(!props.state)
   }
 
   return (
     <div className="block ml-auto z-50 lg:hidden">
-      <button className={hamburger} onClick={toggle}>
-        <Hamburger className="fill-current h-6 w-6" />
-      </button>
+      <HamburgerButton onClick={toggle}>
+        <Hamburger style={{fill: 'currentColor'}} />
+      </HamburgerButton>
     </div>
   )
 }
@@ -111,7 +122,7 @@ const Header = (props) => {
           <A className="block lg:inline lg:py-1 lg:ml-6" activeClassName="active" to='/discovery/'>Discovery</A>
           <A className="block lg:inline lg:py-1 lg:ml-6" activeClassName="active" to='/contact/'>Contact</A>
         </Links>
-        <HamburgerButton toggle={setOpen} state={open} />
+        <HamburgerMenuButton toggle={setOpen} state={open} />
       </Wrapper>
     </nav>
   )
