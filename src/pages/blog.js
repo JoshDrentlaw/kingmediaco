@@ -40,7 +40,7 @@ const BlogPage = () => {
     return (
         <Layout>
             <SEO title="Blog" />
-            {data.allSanityPost.edges.map(({ node }) => (
+            {data.allSanityProject.edges.map(({ node }) => (
                     <ProjectItem key={node.id} padding="1em">
                         <Img fluid={node.mainProjectImage.asset.fluid} alt={node.id} />
                         <H2>{node.projectTitle}</H2>
