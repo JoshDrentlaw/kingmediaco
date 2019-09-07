@@ -6,11 +6,20 @@ import styled from 'styled-components'
 import Hamburger from '../assets/svg/hamburger.inline.svg'
 
 const Wrapper = styled.div`
+  background-color: white;
   border-bottom: 1px solid #616161;
   height: 75px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em;
+  overflow: hidden;
 
   @media(min-width: 1024px) {
     margin-top: 20px;
+    padding: 0;
+    width: 80%;
   }
 `
 
@@ -18,11 +27,21 @@ const Links = styled.div.attrs(({ open }) => ({
   visibility: open ? 'visible' : 'hidden',
   transform: open ? `translateX(0%)` : `translateX(100%)`,
 }))`
+  background-color: white;
+  margin-top: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-end;
+  visibility: visible;
+  z-index: 10;
 
   @media (max-width: 1024px) {
     width: 45vw; height: 100vh;
+    flex-direction: column;
     padding: 0.5em;
     padding-top: 4rem;
+    margin-top: 1em;
     position: absolute;
     visibility: ${props => props.visibility};
     top: 0; right: 0;
@@ -78,19 +97,14 @@ const HamburgerButton = (props) => {
   )
 }
 
-const wrapper = 'bg-transparent mx-auto flex justify-between items-center p-4 overflow-hidden lg:p-0 lg:w-4/5';
-
-const links =
-  `bg-black lg:bg-transparent flex flex-col justify-start items-end text-md z-10 mt-4 lg:mt-0 lg:flex-row lg:visible`;
-
 const Header = (props) => {
   const [open, setOpen] = useState(false);
 
   return(
     <nav className="relative w-full z-50">
-      <Wrapper className={wrapper}>
+      <Wrapper>
         <span className="md:text-4xl whitespace-no-wrap inline" style={{ gridArea: 'brand', fontSize: '31px' }}>King Media Co</span>
-        <Links open={open} className={links}>
+        <Links open={open}>
           <A className="block lg:inline lg:py-1" activeClassName="active" to='/'>Home</A>
           <A className="block lg:inline lg:py-1 lg:ml-6" activeClassName="active" to='/services/'>Services</A>
           <A className="block lg:inline lg:py-1 lg:ml-6" activeClassName="active" to='/blog/'>Blog</A>
