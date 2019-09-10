@@ -47,20 +47,36 @@ export const Container = styled.section`
     }
 `
 
+const OutsideLink = styled.a`
+  color: ${props => props.color || 'black'};
+  display: inline;
+  border: none;
+  margin-left: 1em;
+
+  &:first-child {
+    margin-left: 0;
+  }
+
+  svg {
+    display: inline;
+    fill: currentColor;
+  }
+`
+
 export const Socials = () => (
   <div>
-    <a href="https://vimeo.com/kingmediaco" target="_blank" rel="noopener noreferrer" className="text-white inline border-none">
-      <Vimeo className="fill-current w-6 h-6 inline" />
-    </a>
-    <a href="https://www.facebook.com/King-Media-Co-2161807463868764/" target="_blank" rel="noopener noreferrer" className="text-white inline border-none ml-4">
-      <Facebook className="fill-current w-6 h-6 inline" />
-    </a>
-    <a href="https://www.youtube.com/channel/UCLxvxR8zhTVagA0ysMkdlzA" target="_blank" rel="noopener noreferrer" className="text-red-700 inline border-none ml-4">
-      <Youtube className="fill-current w-6 h-6 inline" />
-    </a>
-    <a href="https://www.instagram.com/kingmediaco/" target="_blank" rel="noopener noreferrer" className="text-white inline border-none ml-4">
-      <Instagram className="fill-current w-6 h-6 inline" />
-    </a>
+    <OutsideLink href="https://vimeo.com/kingmediaco" target="_blank" rel="noopener noreferrer">
+      <Vimeo/>
+    </OutsideLink>
+    <OutsideLink href="https://www.facebook.com/King-Media-Co-2161807463868764/" target="_blank" rel="noopener noreferrer">
+      <Facebook/>
+    </OutsideLink>
+    <OutsideLink href="https://www.youtube.com/channel/UCLxvxR8zhTVagA0ysMkdlzA" target="_blank" rel="noopener noreferrer" color="red">
+      <Youtube/>
+    </OutsideLink>
+    <OutsideLink href="https://www.instagram.com/kingmediaco/" target="_blank" rel="noopener noreferrer">
+      <Instagram/>
+    </OutsideLink>
   </div>
 )
 

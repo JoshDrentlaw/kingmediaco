@@ -5,6 +5,12 @@ import styled from 'styled-components'
 
 import Hamburger from '../assets/svg/hamburger.inline.svg'
 
+const Nav = styled.nav`
+  position: relative;
+  width: 100%;
+  z-index: 50;
+`
+
 const Wrapper = styled.div`
   background-color: white;
   border-bottom: 1px solid #616161;
@@ -21,6 +27,13 @@ const Wrapper = styled.div`
     padding: 0;
     width: 80%;
   }
+`
+
+const Company = styled.span`
+  display: inline;
+  font-size: calc(25px + (31 - 25) * (100vw - 300px) / (880 - 300));
+  grid-area: 'brand';
+  white-space: nowrap;
 `
 
 const Links = styled.div.attrs(({ open }) => ({
@@ -52,6 +65,7 @@ const Links = styled.div.attrs(({ open }) => ({
 
 const A = styled(Link)`
   color: black;
+  display: block;
   border-top: 1px solid black;
   padding: 2px 0;
   text-align: right;
@@ -64,9 +78,16 @@ const A = styled(Link)`
 
   @media (min-width: 1024px) {
     color: black;
+    display: inline;
     border-top: 1px solid black;
     border-bottom: 1px solid black;
     text-align: center;
+    padding: 0 0.25em;
+    margin-left: 1.5em;
+
+    &:first-child {
+      margin-left: 0;
+    }
 
     &:hover {
         background-color: rgba(153, 153, 153, 0.58);
@@ -78,6 +99,16 @@ const A = styled(Link)`
         background-color: black;
         color: white;
     }
+  }
+`
+
+const HamburgerButtonContainer = styled.div`
+  display: block;
+  margin-left: auto;
+  z-index: 50;
+
+  @media(min-width: 1024px) {
+    display: none;
   }
 `
 
@@ -100,11 +131,11 @@ const HamburgerMenuButton = (props) => {
   }
 
   return (
-    <div className="block ml-auto z-50 lg:hidden">
+    <HamburgerButtonContainer>
       <HamburgerButton onClick={toggle}>
         <Hamburger style={{fill: 'currentColor'}} />
       </HamburgerButton>
-    </div>
+    </HamburgerButtonContainer>
   )
 }
 
@@ -112,19 +143,19 @@ const Header = (props) => {
   const [open, setOpen] = useState(false);
 
   return(
-    <nav className="relative w-full z-50">
+    <Nav>
       <Wrapper>
-        <span className="md:text-4xl whitespace-no-wrap inline" style={{ gridArea: 'brand', fontSize: '31px' }}>King Media Co</span>
+        <Company>King Media Co</Company>
         <Links open={open}>
-          <A className="block lg:inline lg:py-1" activeClassName="active" to='/'>Home</A>
-          <A className="block lg:inline lg:py-1 lg:ml-6" activeClassName="active" to='/services/'>Services</A>
-          <A className="block lg:inline lg:py-1 lg:ml-6" activeClassName="active" to='/blog/'>Blog</A>
-          <A className="block lg:inline lg:py-1 lg:ml-6" activeClassName="active" to='/discovery/'>Discovery</A>
-          <A className="block lg:inline lg:py-1 lg:ml-6" activeClassName="active" to='/contact/'>Contact</A>
+          <A activeClassName="active" to='/'>Home</A>
+          <A activeClassName="active" to='/services/'>Services</A>
+          <A activeClassName="active" to='/blog/'>Blog</A>
+          <A activeClassName="active" to='/discovery/'>Discovery</A>
+          <A activeClassName="active" to='/contact/'>Contact</A>
         </Links>
         <HamburgerMenuButton toggle={setOpen} state={open} />
       </Wrapper>
-    </nav>
+    </Nav>
   )
 }
 
